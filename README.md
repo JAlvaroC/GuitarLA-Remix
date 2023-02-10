@@ -61,11 +61,45 @@ git init
 git add .
 git status
 git commit -m "first commit"
-git branch -M main
+git branch -M main 
+<!-- cambiamos a la rama main para trabajar mejor -->
 git remote add origin https://github.com/JAlvaroC/GuitarLA-Remix.git
 git push -u origin main
-<!-- PROYECTO SUBIDO EN VERCEL -->
 echo "# GuitarLA-Remix" >> README.md
 
+<!-- PROYECTO SUBIDO EN VERCEL -->
+autrizamos y importamos 
+configuramos las varaibles de entornos
+API_URL=<La variable de entorno que oibtienes de subir el backend(esto se vence con el tiempo hay que)>https://guitarla-strapi-2xkr.onrender.com/
+
+Asi se pone
+https://guitarla-strapi-2xkr.onrender.com/api
+
+Procedemos a subir
+Obtenemos el link 
+Deployment
 
 
+https://guitar-la-remix-orpin.vercel.app/
+
+### Se configuro
+```sh
+
+ /** @type {import('@remix-run/dev').AppConfig} */
+module.exports = {
+  serverBuildTarget: "vercel",
+  ignoredRouteFiles: ["**/.*"],
+  future: {}
+ };
+```
+
+### Luego
+
+```sh
+import { createRequestHandler } from "@remix-run/vercel";
+import * as build from "@remix-run/dev/server-build";
+ 
+export default createRequestHandler({ build, mode: process.env.NODE_ENV });
+```
+
+Actualizamos todo
