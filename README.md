@@ -102,4 +102,7 @@ import * as build from "@remix-run/dev/server-build";
 export default createRequestHandler({ build, mode: process.env.NODE_ENV });
 ```
 
+Instalamos @vercel/node y @remix-run/vercel 
+
 Actualizamos todo
+Everything up-to-date =>todo corrcto
